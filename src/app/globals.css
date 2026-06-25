@@ -1,55 +1,250 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-apple-bg: var(--bg-primary);
+  --color-apple-surface: var(--bg-secondary);
+  --color-apple-elevated: var(--bg-elevated);
+  --color-apple-text: var(--text-primary);
+  --color-apple-muted: var(--text-secondary);
+  --color-apple-accent: var(--accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root,
+.light {
+  --bg-primary: #fbfbfd;
+  --bg-secondary: #f5f5f7;
+  --bg-elevated: #ffffff;
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #86868b;
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+  --nav-bg: rgba(251, 251, 253, 0.8);
+  --shadow-card: none;
+  --progress-track: #d2d2d7;
+  --badge-bg: rgba(0, 113, 227, 0.08);
+  --badge-border: rgba(0, 113, 227, 0.18);
+  --badge-text: #0071e3;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --tag-bg: #f5f5f7;
 }
 
+.dark {
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --bg-elevated: #1c1c1e;
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1a6;
+  --text-tertiary: #6e6e73;
+  --accent: #2997ff;
+  --accent-hover: #0071e3;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --nav-bg: rgba(0, 0, 0, 0.8);
+  --shadow-card: none;
+  --progress-track: #3a3a3c;
+  --badge-bg: rgba(41, 151, 255, 0.12);
+  --badge-border: rgba(41, 151, 255, 0.2);
+  --badge-text: #2997ff;
+  --card-bg: #1c1c1e;
+  --input-bg: #1c1c1e;
+  --tag-bg: #2c2c2e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-@import "tailwindcss";
-
-html, body {
   margin: 0;
   padding: 0;
-  font-family: "Space Grotesk", sans-serif;
-  background-color: #0a0a0a;
-  color: #f3f4f6;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Inter", "Segoe UI", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .animate-blink {
-  animation: blink 0.8s step-end infinite;
+  animation: blink 1s step-end infinite;
 }
 
-@keyframes loading {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(250%); }
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
 }
 
 .animate-loading-bar {
-  animation: loading 0.8s ease infinite;
+  animation: loading-bar 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(16px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
+    transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.apple-section-tag {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.apple-headline {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.apple-subheadline {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.apple-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  transition: border-color 0.3s ease;
+}
+
+.apple-card:hover {
+  border-color: var(--border-strong);
+}
+
+.apple-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--badge-text);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  padding: 0.2rem 0.625rem;
+  border-radius: 9999px;
+}
+
+.apple-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+
+.apple-btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.apple-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-strong);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+}
+
+.apple-btn-secondary:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-strong);
+}
+
+.apple-input {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 0.75rem 0.875rem;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.apple-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.apple-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.dark .apple-input:focus {
+  box-shadow: 0 0 0 3px rgba(41, 151, 255, 0.15);
 }
