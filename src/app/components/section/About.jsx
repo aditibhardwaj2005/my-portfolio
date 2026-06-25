@@ -171,7 +171,7 @@ export default function About() {
                     margin: "0 0 0.25rem",
                   }}
                 >
-                  Web Developer — Webneeds
+                  Web Developer - Webneeds
                 </p>
                 <p
                   style={{

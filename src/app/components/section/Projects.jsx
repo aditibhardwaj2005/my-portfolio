@@ -6,7 +6,7 @@ import { RevealOnScroll } from "@/app/components/RevealOnScroll";
 export default function Projects() {
   const projects = [
     {
-      title: "TruthVerify — Fake News Detection AI",
+      title: "TruthVerify - Fake News Detection AI",
       description:
         "TruthVerify uses advanced AI analysis to identify fake news and misinformation in real-time. Trust verified information.",
       tech: ["React", "Next.js", "Gemini", "Tailwind CSS", "JavaScript"],

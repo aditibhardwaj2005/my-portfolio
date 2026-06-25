@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Aditi Bhardwaj — Portfolio",
+  title: "Aditi Bhardwaj - Portfolio",
   description:
     "Aditi Bhardwaj's personal portfolio website showcasing her skills, projects, and experience in web development.",
 };
