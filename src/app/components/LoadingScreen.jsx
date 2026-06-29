@@ -68,7 +68,7 @@ export default function LoadingScreen({ onComplete }) {
         >
           Portfolio
         </p>
-        <h1
+        <p
           style={{
             fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
             fontWeight: 700,
@@ -79,7 +79,7 @@ export default function LoadingScreen({ onComplete }) {
           }}
         >
           Aditi Bhardwaj
-        </h1>
+        </p>
       </div>
 
       <div

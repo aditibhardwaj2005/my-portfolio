@@ -72,6 +72,7 @@ export default function Contact() {
               name="name"
               required
               placeholder="Name"
+              aria-label="Your Name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               className="apple-input"
@@ -82,6 +83,7 @@ export default function Contact() {
               name="email"
               required
               placeholder="Email"
+              aria-label="Your Email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               className="apple-input"
@@ -92,6 +94,7 @@ export default function Contact() {
               rows={5}
               required
               placeholder="Message"
+              aria-label="Your Message"
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               className="apple-input"

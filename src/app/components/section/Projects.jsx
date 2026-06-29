@@ -131,6 +131,7 @@ function ProjectCard({ project }) {
           href={project.codeLink || "#"}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`View source code for ${project.title}`}
           style={{
             fontSize: "0.8125rem",
             fontWeight: 500,
@@ -148,6 +149,7 @@ function ProjectCard({ project }) {
           href={project.link || "#"}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`View live demo of ${project.title}`}
           style={{
             fontSize: "0.8125rem",
             fontWeight: 500,
