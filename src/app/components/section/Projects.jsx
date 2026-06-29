@@ -10,7 +10,7 @@ export default function Projects() {
       description:
         "TruthVerify uses advanced AI analysis to identify fake news and misinformation in real-time. Trust verified information.",
       tech: ["React", "Next.js", "Gemini", "Tailwind CSS", "JavaScript"],
-      link: "https://truth-verify-sigma.vercel.app/",
+      link: "https://truth-verify.aditibhardwaj.com",
       codeLink: "https://github.com/aditibhardwaj2005/Truth-Verify",
     },
     {
@@ -18,7 +18,7 @@ export default function Projects() {
       description:
         "A web application for managing student tasks and deadlines with a clean, intuitive interface.",
       tech: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
-      link: "https://student-task-manager-ruddy.vercel.app",
+      link: "https://student-task-manager.aditibhardwaj.com",
       codeLink: "https://github.com/aditibhardwaj2005/Student-Task-Manager",
     },
     {
@@ -26,7 +26,7 @@ export default function Projects() {
       description:
         "A complete authentication application with secure login, registration, and session management.",
       tech: ["React", "Next.js", "Tailwind CSS", "MySQL"],
-      link: "https://auth-app-reddu.vercel.app",
+      link: "https://auth-app.aditibhardwaj.com",
       codeLink: "https://github.com/aditibhardwaj2005/Auth-App",
     },
     {
@@ -34,7 +34,7 @@ export default function Projects() {
       description:
         "A responsive personal portfolio website built with React and Vite.",
       tech: ["React", "Vite", "Tailwind CSS", "JavaScript"],
-      link: "https://aditi-portfolio-react.vercel.app",
+      link: "https://aditibhardwaj.com",
       codeLink: "https://github.com/aditibhardwaj2005/my-portfolio",
     },
   ];
